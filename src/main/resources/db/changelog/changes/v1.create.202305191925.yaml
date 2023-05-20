@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - preConditions:
+      - onFail: WARN
+      - onError: WARN
+      - not:
+          - tableExists:
+              tableName: usuario
+  - changeSet:
+      id: 4c2dd2dc-aa82-4d0f-8d2e-9c94e2b7afbd
+      author: luisgalrod@gmail.com
+      comment: Primer cambio en la base, se agrega la tabla usuario
+      changes:
+        - createTable:
+            tableName: usuario
+            columns:
+              - column:
+                  name: usuario_id
+                  type: VARCHAR(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: VARCHAR(20)
+              - column:
+                  name: apellido
+                  type: VARCHAR(20)
+              - column:
+                  name: cargo
+                  type: VARCHAR(20)
+              - column:
+                  name: fecha_registro
+                  type: DATE
