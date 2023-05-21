@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: d47eb906-d624-4d06-9047-8bbcc88cbd58
+      author: luishalrod@gmail.com
+      comment: "Se cambia el enum estado remplazando los espacios por guion bajo"
+      changes:
+        - sql:
+            ALTER TYPE estado RENAME VALUE 'POR HACER' TO 'POR_HACER';
+        - sql:
+            ALTER TYPE estado RENAME VALUE 'EN PROGRESO' TO 'EN_PROGRESO';

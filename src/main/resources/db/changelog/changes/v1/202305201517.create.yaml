@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: "eb62f0b1-2c2d-49c7-bf62-8f320a1b49c3"
+      author: luisgalrod@gmail.com
+      comment: Creación de las tabla Tarea
+      changes:
+        - sql:
+            CREATE TYPE prioridadEnum AS ENUM('MUY ALTA', 'ALTA', 'MEDIA', 'BAJA', 'MUY BAJA')
+        - createTable:
+            tableName: tarea
+            columns:
+              - column:
+                  name: tarea_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: ID de tipo UUID
+              - column:
+                  name: nombre
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: descripcion
+                  type: VARCHAR(255)
+                  remarks: Breve descripción
+              - column:
+                  name: fecha_creacion
+                  type: DATE
+              - column:
+                  name: prioridad
+                  type: prioridadEnum
+                  defaultValue: 'MUY BAJA'
+              - column:
+                  name: tiempo_estimado
+                  type: TIME
+                  defaultValue: '00:00'
+        - modifyDataType:
+            tableName: usuario
+            columnName: usuario_id
+            newDataType: UUID

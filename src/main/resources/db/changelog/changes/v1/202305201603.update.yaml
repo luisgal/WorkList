@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: "f5e36bc5-94d2-4f3a-8a4d-62084d64a9e9"
+      author: luisgalrod@gmail.com
+      comment: Modificación en la tabla Usuario, el tipo de dato de la columna ID sera de tipo UUID
+      changes:
+        - update:
+            tableName: usuario
+            columns:
+              - column:
+                  name: usuario_id
+                  type: UUID
+              - column:
+                  name: nombre
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cargo
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fecha_registro
+                  defaultValueDate: 'CURRENT_DATE'

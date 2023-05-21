@@ -1,10 +1,4 @@
 databaseChangeLog:
-  - preConditions:
-      - onFail: WARN
-      - onError: WARN
-      - not:
-          - tableExists:
-              tableName: usuario
   - changeSet:
       id: 4c2dd2dc-aa82-4d0f-8d2e-9c94e2b7afbd
       author: luisgalrod@gmail.com

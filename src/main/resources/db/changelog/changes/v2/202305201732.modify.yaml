@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: "702016d7-eb43-4f54-98d3-80f53d16eb9b"
+      author: luishalrod@gmail.com
+      comment: "La base de datos cambia: se elimina la tabla list, se agregan campos a tarea y se añade la tabla colaboradores"
+      changes:
+        - dropTable:
+              tableName: lista
+        - sql:
+            CREATE TYPE estado AS ENUM('POR HACER','EN PROGRESO', 'FINALIZADO')
+        - sql:
+            DROP type cargoenum
+        - addColumn:
+            tableName: tarea
+            columns:
+              - column:
+                  name: estado_actual
+                  type: estado
+              - column:
+                  name: fecha_vencimiento
+                  type: TIMESTAMP
+        - createTable:
+            tableName: colaborador
+            columns:
+              - column:
+                  name: colaborador_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: usuario_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tarea_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: colaborador
+            baseColumnNames: usuario_id
+            referencedTableName: usuario
+            referencedColumnNames: usuario_id
+            constraintName: fk_colaborador_usuario
+        - addForeignKeyConstraint:
+            baseTableName: colaborador
+            baseColumnNames: tarea_id
+            referencedTableName: tarea
+            referencedColumnNames: tarea_id
+            constraintName: fk_colaborador_tarea

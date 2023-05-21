@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: "546d534bb-d69a-4b02-ba84-eb0d21bb641b"
+      author: luisgalrod@gmail.com
+      comment: Modificación en la tabla lista, se encontraba con un error, el nombre de la tabla estaba mal
+      changes:
+        - renameTable:
+            newTableName: lista
+            oldTableName: lista_id

@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: e2d9af37-8892-48a4-955c-d0eb6630b18c
+      author: luisgalrod@gmail.com
+      comment: "Se insertan la función de generación aleatoria de UUID para las tablas usuario, tarea y colaborador"
+      changes:
+        - addDefaultValue:
+            tableName: usuario
+            columnName: usuario_id
+            defaultValueComputed: 'GEN_RANDOM_UUID()'
+        - addDefaultValue:
+            tableName: tarea
+            columnName: tarea_id
+            defaultValueComputed: 'GEN_RANDOM_UUID()'
+        - addDefaultValue:
+            tableName: colaborador
+            columnName: colaborador_id
+            defaultValueComputed: 'GEN_RANDOM_UUID()'

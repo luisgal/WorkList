@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: "5c73e15e-f773-4839-87f5-5f40e21e5fb2"
+      author: luisgalrod@gmail.com
+      comment: Modificación en la tabla Tarea, la fecha de creación debe ser de tipo TIMESTAMP
+      changes:
+        - update:
+            tableName: tarea
+            columns:
+              - column:
+                  name: fecha_creacion
+                  type: TIMESTAMP

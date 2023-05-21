@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: "fb16dc6a-7cf3-4ee9-a664-b6e93cec3393"
+      author: luishalrod@gmail.com
+      comment: "Se agrega la columna responsable directo a la tabla colaborador"
+      changes:
+        - addColumn:
+            tableName: colaborador
+            columns:
+              - column:
+                  name: responsable_directo
+                  type: BOOLEAN
+                  defaultValueBoolean: false

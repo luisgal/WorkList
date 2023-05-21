@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 128eadc5-3de8-493b-996f-32cefee84ab9
+      author: luishalrod@gmail.com
+      comment: "Se elimina el campo prioridad y se crea urgencia de tipo enum prioridad"
+      changes:
+        - tagDatabase:
+            tag: v2.0.1
+        - dropColumn:
+            tableName: tarea
+            columnName: prioridad
+        - sql:
+            CREATE TYPE prioridad AS ENUM('MUY_ALTA', 'ALTA', 'MEDIA', 'BAJA', 'MUY_BAJA');
+        - sql:
+            DROP type prioridadenum
+        - addColumn:
+            tableName: tarea
+            columns:
+              - column:
+                  name: urgencia
+                  type: prioridad

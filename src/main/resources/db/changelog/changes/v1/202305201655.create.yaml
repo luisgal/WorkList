@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: "c83bc248-5c9d-4399-b888-1a80b1990771"
+      author: luisgalrod@gmail.com
+      comment: Creación de las tabla Lista
+      changes:
+        - sql:
+            CREATE TYPE cargoEnum AS ENUM('TO DO', 'IN PROGRESS', 'DONE')
+        - createTable:
+            tableName: lista_id
+            columns:
+              - column:
+                  name: lista_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: cargoEnum
+                  defaultValue: 'TO DO'
+              - column:
+                  name: etiqueta
+                  type: VARCHAR(25)
+              - column:
+                  name: fecha_creacion
+                  type: DATE
