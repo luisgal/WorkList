@@ -1,13 +1,16 @@
-package com.luisgal.project.worklist.secondary.jpa.models;
+package com.luisgal.project.worklist.secondary.jpa.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.List;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -15,6 +18,7 @@ import lombok.Setter;
 @Table(name = "usuario", schema = "public", catalog = "worklist")
 @Getter
 @Setter
+@NoArgsConstructor
 public class UsuarioEntity {
 
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -31,6 +35,13 @@ public class UsuarioEntity {
   @Column(name = "cargo")
   private String cargo;
 
-  @Column(name = "fecha_registro")
-  private Date fechaRegistro;
+  @Column(name = "fecha_registro", insertable = false, updatable = false)
+  private LocalDate fechaRegistro;
+
+  @OneToMany(mappedBy = "usuario")
+  private List<ColaboradorEntity> colaboradores;
+
+  public UsuarioEntity(String usuarioId){
+    this.usuarioId = usuarioId;
+  }
 }

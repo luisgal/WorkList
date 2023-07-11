@@ -1,0 +1,22 @@
+INSERT INTO tarea (nombre, descripcion, tiempo_estimado, estado_actual, fecha_vencimiento, urgencia)
+VALUES
+    ('Tarea 1', 'Descripción de la tarea 1', '02:30:00', 'POR_HACER', '2023-05-25 14:00:00', 'ALTA'),
+    ('Tarea 2', 'Descripción de la tarea 2', '01:15:00', 'EN_PROGRESO', '2023-05-23 10:30:00', 'MEDIA'),
+    ('Tarea 3', 'Descripción de la tarea 3', '03:00:00', 'FINALIZADO', '2023-05-30 18:45:00', 'BAJA'),
+    ('Tarea 4', 'Descripción de la tarea 4', '00:45:00', 'POR_HACER', '2023-05-24 09:00:00', 'MUY_ALTA'),
+    ('Tarea 5', 'Descripción de la tarea 5', '04:30:00', 'EN_PROGRESO', '2023-06-01 12:15:00', 'MUY_BAJA'),
+    ('Tarea 6', 'Descripción de la tarea 6', '03:45:00', 'POR_HACER', '2023-05-26 16:30:00', 'ALTA'),
+    ('Tarea 7', 'Descripción de la tarea 7', '02:00:00', 'EN_PROGRESO', '2023-05-27 09:45:00', 'BAJA'),
+    ('Tarea 8', 'Descripción de la tarea 8', '01:30:00', 'FINALIZADO', '2023-05-28 14:00:00', 'MEDIA'),
+    ('Tarea 9', 'Descripción de la tarea 9', '04:15:00', 'POR_HACER', '2023-05-29 11:30:00', 'MUY_ALTA'),
+    ('Tarea 10', 'Descripción de la tarea 10', '03:30:00', 'EN_PROGRESO', '2023-05-30 17:15:00', 'MUY_BAJA'),
+    ('Tarea 11', 'Descripción de la tarea 11', '02:45:00', 'POR_HACER', '2023-05-31 10:45:00', 'ALTA'),
+    ('Tarea 12', 'Descripción de la tarea 12', '01:15:00', 'EN_PROGRESO', '2023-06-01 13:30:00', 'BAJA'),
+    ('Tarea 13', 'Descripción de la tarea 13', '02:00:00', 'FINALIZADO', '2023-06-02 16:00:00', 'MEDIA'),
+    ('Tarea 14', 'Descripción de la tarea 14', '04:30:00', 'POR_HACER', '2023-06-03 09:15:00', 'MUY_ALTA'),
+    ('Tarea 15', 'Descripción de la tarea 15', '03:00:00', 'EN_PROGRESO', '2023-06-04 12:45:00', 'MUY_BAJA'),
+    ('Tarea 16', 'Descripción de la tarea 16', '02:30:00', 'POR_HACER', '2023-06-05 15:30:00', 'ALTA'),
+    ('Tarea 17', 'Descripción de la tarea 17', '01:45:00', 'EN_PROGRESO', '2023-06-06 11:00:00', 'BAJA'),
+    ('Tarea 18', 'Descripción de la tarea 18', '02:15:00', 'FINALIZADO', '2023-06-07 14:30:00', 'MEDIA'),
+    ('Tarea 19', 'Descripción de la tarea 20', '03:30:00', 'EN_PROGRESO', '2023-06-08 16:15:00', 'MUY_ALTA'),
+    ('Tarea 20', 'Descripción de la tarea 21', '02:45:00', 'FINALIZADO', '2023-06-09 10:30:00', 'ALTA');

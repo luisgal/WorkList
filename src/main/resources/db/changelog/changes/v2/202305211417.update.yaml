@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: a98b2eae-d059-4e06-98f4-cc6640404752
+      author: luishalrod@gmail.com
+      comment: "Se cambia la fecha de registro de tarea a TIMESTAMP y se especifica current_timestamp para las fechas de registro"
+      changes:
+        - modifyDataType:
+            tableName: tarea
+            columnName: fecha_creacion
+            newDataType: TIMESTAMP
+        - addDefaultValue:
+            tableName: tarea
+            columnName: fecha_creacion
+            defaultValueComputed: 'CURRENT_TIMESTAMP'
+        - update:
+            tableName: tarea
+            columns:
+              - column:
+                  name: fecha_creacion
+                  valueComputed: 'CURRENT_TIMESTAMP'

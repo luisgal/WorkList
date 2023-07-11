@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 31f9dff4-52ff-42aa-befd-1df212307fa7
+      author: luishalrod@gmail.com
+      comment: "Se especidica current_date para las fechas de registro"
+      changes:
+        - addDefaultValue:
+            tableName: usuario
+            columnName: fecha_registro
+            defaultValueComputed: 'CURRENT_DATE'
+        - addDefaultValue:
+            tableName: tarea
+            columnName: fecha_creacion
+            defaultValueComputed: 'CURRENT_DATE'
